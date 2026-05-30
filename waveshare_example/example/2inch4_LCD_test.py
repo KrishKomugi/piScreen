@@ -72,9 +72,9 @@ try:
     image = image.rotate(0)
     disp.ShowImage(image)
     time.sleep(3)
+    disp.clear()
     disp.module_exit()
     logging.info("quit:")
-    disp.clear()
 except IOError as e:
     logging.info(e)    
 except KeyboardInterrupt:
