@@ -8,7 +8,7 @@ import logging
 import spidev as SPI
 sys.path.append("..")
 from lib import LCD_2inch4
-from PIL import Image,ImageDraw,ImageFonts
+from PIL import Image,ImageDraw, ImageFont
 
 # Raspberry Pi pin configuration:
 RST = 27
@@ -38,6 +38,9 @@ try:
     draw.line((0, im.size[1], im.size[0], 0),fill=128)
     disp.ShowImage(im)
     im.show()
+
+    Font1 = ImageFont.truetype("../Font/Font01.ttf",25)
+
 
     while True:
         pass
