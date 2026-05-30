@@ -74,6 +74,7 @@ try:
     time.sleep(3)
     disp.module_exit()
     logging.info("quit:")
+    disp.clear()
 except IOError as e:
     logging.info(e)    
 except KeyboardInterrupt:
