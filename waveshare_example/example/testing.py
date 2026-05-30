@@ -30,8 +30,8 @@ try:
     ##From midpoint, split image in half and swap sides
     im = Image.open("../pic/milkyWay.png")
     ysize, xsize = im.size
-    sideL = im.crop((0,0,xsize//2,ysize//2))
-    im.paste(sideL,(0,120))
+    sideL = im.crop((0,0,xsize//2,240))
+    im.paste(sideL,(0,160))
 
     #draw a cross onto the image
     draw = ImageDraw.Draw(im)
