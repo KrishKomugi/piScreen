@@ -5,8 +5,8 @@ import numbers
 
 class LCD_2inch4(lcdconfig.RaspberryPi):
 
-    width = 240
-    height = 320 
+    width = 320
+    height = 240 
     def command(self, cmd):
         self.digital_write(self.DC_PIN, self.GPIO.LOW)
         self.spi_writebyte([cmd])
