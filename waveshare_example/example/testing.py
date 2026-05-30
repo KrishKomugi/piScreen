@@ -30,7 +30,7 @@ try:
     ##From midpoint, split image in half and swap sides
     im = Image.open("../pic/milkyWay.png")
     xsize, ysize = im.size
-    sideL = im.crop(0,0,xsize/2,ysize/2)
+    sideL = im.crop((0,0,xsize//2,ysize//2))
     im.paste(0,0)
 
     #draw a cross onto the image
