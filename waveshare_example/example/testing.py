@@ -8,7 +8,7 @@ import logging
 import spidev as SPI
 sys.path.append("..")
 from lib import LCD_2inch4
-from PIL import Image,ImageDraw,ImageFont
+from PIL import Image,ImageDraw,ImageFonts
 
 # Raspberry Pi pin configuration:
 RST = 27
@@ -26,12 +26,18 @@ try:
     disp.Init()
     # Clear display.
     disp.clear()
-
-    with Image.open("../pic/milkyWay.png") as im:
-        draw = ImageDraw.Draw(im)
-        draw.line((0,0) + im.size, fill = 128)
-        draw.line((0, im.size[1], im.size[0], 0),fill=128)
-        disp.ShowImage(im)
+    
+    ##From midpoint, split image in half and swap sides
+    im = Image.open("../pic/milkyWay.png")
+    xsize, ysize = im.size
+    sideL = im.crop(0,0,xsize/2,ysize/2)
+    im.paste(sideL)
+    #draw a cross onto the image
+    draw = ImageDraw.Draw(im)
+    draw.line((0,0) + im.size, fill = 128)
+    draw.line((0, im.size[1], im.size[0], 0),fill=128)
+    disp.ShowImage(im)
+    im.show()
 
     while True:
         pass
