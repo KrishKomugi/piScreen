@@ -31,7 +31,7 @@ try:
     im = Image.open("../pic/milkyWay.png")
     xsize, ysize = im.size
     sideL = im.crop((0,0,xsize//2,ysize))
-    im.paste(sideL,(0,160))
+    im.paste(sideL,(0,xsize//2))
 
     #draw a cross onto the image
     draw = ImageDraw.Draw(im)
