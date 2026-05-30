@@ -67,6 +67,9 @@ try:
     image1=image1.rotate(0)
     disp.ShowImage(image1)
     time.sleep(3)
+
+
+    
     logging.info("show image")
     image = Image.open('../pic/LCD_2inch4.jpg')	
     image = image.rotate(0)
