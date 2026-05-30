@@ -33,6 +33,9 @@ try:
         draw.line((0, im.size[1], im.size[0], 0),fill=128)
         disp.ShowImage(im)
 
+    while True:
+        pass
+
     disp.clear()
     disp.module_exit()
     logging.info("quit:")
