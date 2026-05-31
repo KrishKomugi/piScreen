@@ -16,13 +16,14 @@ from PIL import Image,ImageDraw, ImageFont
 #prompt user to select image
 def imageSelect():
     while True:
+        print("Enter image name as seen below: ")
         for file_or_dir in os.listdir("img/"):
                 print(file_or_dir)
+        print(40*"*")
         try:
-            return Image.open(input("Enter image name" ))
+            return Image.open("img/"+input("Enter image name: "))
         except:
-            print("Enter valid image name as seen in list: ")
-            print(40*"*")
+            print("Invalid selection")
 
 
 # Raspberry Pi pin configuration:
