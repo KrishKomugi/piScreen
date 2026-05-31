@@ -22,7 +22,7 @@ def imageSelect():
         print(40*"*")
         try:
             return Image.open("img/"+input("Enter image name: "))
-        except:
+        except IOError:
             print("Invalid selection")
 
 
