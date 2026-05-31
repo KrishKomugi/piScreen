@@ -15,7 +15,7 @@ from PIL import Image,ImageDraw, ImageFont
 
 #prompt user to select image
 def imageSelect():
-    while():
+    while True:
         for file_or_dir in os.listdir("img/"):
                 print(file_or_dir)
         try:
