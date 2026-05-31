@@ -15,15 +15,19 @@ from PIL import Image,ImageDraw, ImageFont
 
 #prompt user to select image
 def imageSelect():
+    files  = {}
+    for i, image in enumerate(os.listdir("img/"), start =1):
+         files[i]=image
+
     while True:
-        print("Enter image name as seen below: ")
-        for file_or_dir in os.listdir("img/"):
-                print(file_or_dir)
-        print(40*"*")
+        for key in files:
+            print(f"{key}. {files}")
         try:
-            return Image.open("img/"+input("Enter image name: "))
+            return Image.open(files[input("Enter the number of the image you would like to select: ")])
         except IOError:
-            print("Invalid selection")
+            print("\nInvalid selection")
+            print(40*"*")
+
 
 
 # Raspberry Pi pin configuration:
