@@ -21,7 +21,7 @@ def imageSelect():
 
     while True:
         for key in files:
-            print(f"{key}. {files}")
+            print(f"{key}. {files[key]}")
         try:
             return Image.open(files[input("Enter the number of the image you would like to select: ")])
         except IOError:
