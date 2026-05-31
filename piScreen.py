@@ -10,6 +10,21 @@ sys.path.append("..")
 from lib import LCD_2inch4
 from PIL import Image,ImageDraw, ImageFont
 
+
+# functions go here
+
+#prompt user to select image
+def imageSelect():
+    while():
+        for file_or_dir in os.listdir("img/"):
+                print(file_or_dir)
+        try:
+            return Image.open(input("Enter image name" ))
+        except:
+            print("Enter valid image name as seen in list: ")
+            print(40*"*")
+
+
 # Raspberry Pi pin configuration:
 RST = 27
 DC = 25
@@ -29,6 +44,9 @@ try:
     
     # code goes here
 
+    # open image
+    im = imageSelect()
+
 
 
 
@@ -42,5 +60,3 @@ except KeyboardInterrupt:
     disp.module_exit()
     logging.info("quit:")
     exit()
-
-# functions go here
