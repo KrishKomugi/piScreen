@@ -32,7 +32,7 @@ try:
     xsize, ysize = im.size
     sideL = im.crop((0,0,xsize//2,ysize))
     im.paste(sideL,(xsize//2,0))
-
+ 
     #draw a cross onto the image
     draw = ImageDraw.Draw(im)
     draw.line((0,0) + im.size, fill = 128)
