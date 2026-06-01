@@ -24,7 +24,7 @@ def imageSelect():
             print(f"{key}. {files[key]}")
         try:
             return Image.open("img/"+files[int(input("Enter the number of the image you would like to select: "))])
-        except IOError:
+        except (IOError, KeyError):
             print("\nInvalid selection")
             print(40*"*")
 
