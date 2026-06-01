@@ -52,8 +52,13 @@ try:
     # open image
     im = imageSelect()
 
+    disp.ShowImage(im)
 
 
+
+    #keep program running loop for testing
+    while True:
+        pass
 
     # end of program cycle 
     disp.clear()
